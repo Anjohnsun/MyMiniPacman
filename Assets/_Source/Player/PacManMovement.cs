@@ -12,26 +12,42 @@ public class PacManMovement : MonoBehaviour
     [SerializeField] private Direction? _currentDirection;
 
     [SerializeField] private LayerMask _obstacleMask;
+    [SerializeField] private LayerMask _bonusMask;
+    [SerializeField] private LayerMask _enemyMask;
 
+    [SerializeField] private PlayerUIDrawer _uiDrawer;
+
+    private PlayerData _playerData;
+    [SerializeField] private int _startHp;
 
     private void Start()
     {
         _moveDelay = _moveDuration / 10;
+        _playerData = new PlayerData(_startHp, 0);
+        _uiDrawer.PlayerData = _playerData;
     }
 
     private void Update()
     {
-        /*#region Input
-        if (Input.GetAxis("Horizontal") != 0)
-            UpdateNextDirection(Input.GetAxis("Horizontal") > 0 ? Direction.Right : Direction.Left);
-        if (Input.GetAxis("Vertical") != 0)
-            UpdateNextDirection(Input.GetAxis("Vertical") > 0 ? Direction.Up : Direction.Down);
-        #endregion */
-
         if (Input.GetKeyDown(KeyCode.UpArrow)) UpdateNextDirection(Direction.Up);
         if (Input.GetKeyDown(KeyCode.DownArrow)) UpdateNextDirection(Direction.Down);
         if (Input.GetKeyDown(KeyCode.LeftArrow)) UpdateNextDirection(Direction.Left);
         if (Input.GetKeyDown(KeyCode.RightArrow)) UpdateNextDirection(Direction.Right);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //ахахахах следущая строчка это что???
+        if (_bonusMask == (_bonusMask | (1 << other.gameObject.layer)))
+        {
+            _playerData.Points++;
+            _uiDrawer.Refresh();
+            other.gameObject.SetActive(false);
+        }
+        else if (other.gameObject.layer == _enemyMask.value)
+        {
+
+        }
     }
 
     private void UpdateNextDirection(Direction newDirection)

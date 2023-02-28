@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4013072691633866}
   - component: {fileID: 33988540842558722}
   - component: {fileID: 23228500798942212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PowerPellet_Rotating_Mesh02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 33568480583130570}
   - component: {fileID: 23919071706825090}
   - component: {fileID: 135284696859169368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PowerPellet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.26
+  m_Radius: 0.36
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1395806789907932
 GameObject:
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 4614763328721724}
   - component: {fileID: 33440939153033816}
   - component: {fileID: 23783443869863754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PowerPellet_Rotating_Mesh01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4840535864566974}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PowerPellets_Rotating
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 4340507524703166}
   - component: {fileID: 33878493460112010}
   - component: {fileID: 23221841058434252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PowerPellet_Rotating_Mesh04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 4029439372517068}
   - component: {fileID: 33850781461582592}
   - component: {fileID: 23433873572401556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PowerPellet_Rotating_Mesh03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
