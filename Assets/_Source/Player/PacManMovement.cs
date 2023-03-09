@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PacManMovement : MonoBehaviour
 {
@@ -137,15 +138,19 @@ public class PacManMovement : MonoBehaviour
         switch (_currentDirection)
         {
             case Direction.Up:
+                //transform.DOMoveZ(1, _moveDuration).SetLoops(1).SetEase(Ease.Linear);
                 actualStep = new Vector3(0, 0, 0.1f);
                 break;
             case Direction.Down:
+                //transform.DOMoveZ(-1, _moveDuration).SetLoops(1).SetEase(Ease.Linear);
                 actualStep = new Vector3(0, 0, -0.1f);
                 break;
             case Direction.Left:
+                //transform.DOMoveX(-1, _moveDuration).SetLoops(1).SetEase(Ease.Linear);
                 actualStep = new Vector3(-0.1f, 0, 0);
                 break;
             case Direction.Right:
+                //transform.DOMoveX(1, _moveDuration).SetLoops(1).SetEase(Ease.Linear);
                 actualStep = new Vector3(0.1f, 0, 0);
                 break;
         }
@@ -153,7 +158,7 @@ public class PacManMovement : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             transform.position += actualStep;
-            yield return new WaitForSeconds(_moveDelay);
+            yield return new WaitForSecondsRealtime(_moveDelay);
         }
 
         ManageNextMove();
